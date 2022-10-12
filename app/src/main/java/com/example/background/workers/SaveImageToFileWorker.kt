@@ -29,9 +29,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-/**
- * Saves the image to a permanent file
- */
+
 private const val TAG = "SaveImageToFileWorker"
 class SaveImageToFileWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) {
 
@@ -42,8 +40,7 @@ class SaveImageToFileWorker(ctx: Context, params: WorkerParameters) : Worker(ctx
     )
 
     override fun doWork(): Result {
-        // Makes a notification when the work starts and slows down the work so that
-        // it's easier to see each WorkRequest start, even on emulated devices
+
         makeStatusNotification("Saving image", applicationContext)
         sleep()
 

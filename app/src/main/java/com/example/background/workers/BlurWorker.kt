@@ -36,7 +36,7 @@ class BlurWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) {
 
         makeStatusNotification("Blurring image", appContext)
 
-        // This is an utility function added to emulate slower work.
+
         sleep()
 
         return try {
@@ -52,7 +52,7 @@ class BlurWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) {
 
             val output = blurBitmap(picture, appContext)
 
-            // Write bitmap to a temp file
+
             val outputUri = writeBitmapToFile(appContext, output)
 
             val outputData = workDataOf(KEY_IMAGE_URI to outputUri.toString())
